@@ -31,7 +31,7 @@
 
 <!-- 2018-3-22 -->
 ## 学习内容
-###Build a Real-Time Slack Clone using AngularFire:
+### Build a Real-Time Slack Clone using AngularFire:
 Creating Direct Messages
 ## 遇到的问题：
 `Uncaught SyntaxError: Unexpected identifier`
