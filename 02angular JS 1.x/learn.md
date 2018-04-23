@@ -14,17 +14,17 @@
 ## 学习内容
 ### Build a Real-Time Slack Clone using AngularFire
 ## 遇到的问题：
-`angular.js:14800 Error: transition superseded  
-    at $StateProvider.$get (angular-ui-router.js:2909)  
-    at Object.invoke (angular.js:5106)  
-    at angular.js:4893  
-    at Object.getService [as get] (angular.js:5047)  
-    at angular-ui-router.js:3696  
-    at Object.invoke (angular.js:5106)  
-    at angular.js:4903  
-    at forEach (angular.js:408)  
-    at createInjector (angular.js:4903)  
-    at doBootstrap (angular.js:1955) "Possibly unhandled rejection: {}"`
+`angular.js:14800 Error: transition superseded`  
+    `at $StateProvider.$get (angular-ui-router.js:2909)`  
+    `at Object.invoke (angular.js:5106)`  
+    `at angular.js:4893`  
+    `at Object.getService [as get] (angular.js:5047)`  
+    `at angular-ui-router.js:3696`  
+    `at Object.invoke (angular.js:5106)`  
+    `at angular.js:4903`  
+    `at forEach (angular.js:408)`  
+    `at createInjector (angular.js:4903)`  
+    `at doBootstrap (angular.js:1955) "Possibly unhandled rejection: {}"`
 #### 经测试发现，如果清楚缓存可以登录一次，不会报错，但是第二次就不可以了。而切换到master，就没问题。
 #### 分析：会不会是其他没有写的代码导致的呢？经测试不是因为这个原因。是因为url写错了。没有写localhost:4000，而是使用0.0.0.0:4000。后经再次测试，这个报错是因为已经登录过引起的，与resolve没有关系。
 <!-- 2018-3-21 -->
