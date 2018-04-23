@@ -13,7 +13,7 @@
 <!-- 2018-3-21 -->
 ## 学习内容
 ### Build a Real-Time Slack Clone using AngularFire
-##### 遇到的问题：
+## 遇到的问题：
 `angular.js:14800 Error: transition superseded
     at $StateProvider.$get (angular-ui-router.js:2909)
     at Object.invoke (angular.js:5106)
@@ -63,6 +63,6 @@ Creating Direct Messages
 
 
 ## 遇到的坑
-### angular JS 中 javascript page 无法跳转
+##### angular JS 中 javascript page 无法跳转
 ### 原因：posts.html写成了posts/html
 <!-- 2018-4-23 -->
