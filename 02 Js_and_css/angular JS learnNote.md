@@ -1,3 +1,19 @@
+<!--2018-4-24-->
+## 遇到的坑
+#### Error: ngModel:nonassign Non-Assignable Expression
+#### 分析原因：是由ng-model=“xxx()” 书写错误导致的。 
+#### 正确的写法： ng-model="xxx" 或者 ng-click="xxx()"
+
+## 学习内容
+### ngModel
+#### ngModel命令用于绑定( input, select, textarea 或者 custom from control) 作为一个特性
+#### [参考资料] (https://code.angularjs.org/1.4.7/docs/api/ng/directive/ngModel)
+
+### 调试angular JS 
+#### 安装两个插件 angular JS batrang 和 angular JS spector，console中没有angularJS 需要重启浏览器。安装好后，可以在页面看到任意变量，如需要在console中调试，在页面右键点击想要调试的变量，然后输入$scope.xxx。
+#### [参考资料](https://blog.csdn.net/fangjuanyuyue/article/details/51201622)
+<!--2018-4-24-->
+
 <!-- 2018-4-23 -->
 ## 学习内容
 
@@ -10,8 +26,11 @@
 
 #### Using Parameters in Links
 #### To create a link that passes parameters, use the state name like a function and pass it an object with parameter names as keys. The proper href will be generated.
+#####  ui-sref='stateName' - Navigate to state, no params. 'stateName' can be any valid absolute or relative state, following the same syntax rules as $state.go()
+##### ui-sref='stateName({param: value, param: value})' -Navigate to state, with params.
 #### For example :
 <a ui-sref="contacts.detail({contactId: id})">View Contact</a>
+#### [参考资料](https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-sref)
 
 
 ## 遇到的坑
