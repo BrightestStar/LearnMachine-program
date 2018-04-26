@@ -1,7 +1,65 @@
+<!--2018-4-26-->
+## 遇到的的坑
+### iframe not work
+#### 经过反复排查，不显示的原因是src写成了scr，所以一直无法显示。
+
+### Refused to display 'https://<domain>.com' in a frame because it set 'X-Frame-Options' to 'some-origin'.
+#### 经查阅资料，只有当架设iframe的网站与发出X-Frame-Options的网站相同（X-Frame-Options相同），才能显示发出X-Frame-Options网页的内容。
+
+#### 解决方法在发出X-Frame-Options的方法中加入response.setHeader("X-Frame-Options", "SAMEORIGIN");
+[参考资料](http://caibaojian.com/x-frame-options.html)
+[参考资料](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options)
+[参考资料](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
+<!--2018-4-26-->
+
+<!--2018-4-25-->
+## 学习内容
+### angularJS orderBy
+#### 在数组中排序，使用orderBy: 'object.key'
+`laborInfo = [{id: 'foo'}, {id: 'bar'}]`  
+`<li ng-repeat="laborEle in LaborInfo | orderBy: 'id'">`  
+
+### angularJS forEach
+`Object = [{'foo01':'bar01'},{'foo02':'bar02'}]`  
+`angular.forEach(Object, function(value, key))`   
+### angular isObject && isXxx 方法
+`angular.isObject(value)` #返回true false
+
+#### [参考资料](https://docs.angularjs.org/api/ng/filter/orderBy#orderBy-arguments)
+
+## 遇到的坑
+### 没有办法使用css 将两个嵌套的表格，别接成一个没有嵌套的表格。一下代码是一个嵌套表格的代码。
+` <table>`  
+`<tr ng-repeat="info in Infos">`   
+`<td ng-if="true" ng-repeat='i in info'>{{i.key}}</td>`     
+`<td ng-if="false">{{info.key}}</td>`       
+`</tr>`     
+`</table>`      
+### 没有办法将其改成统一格式的表格
+` <table>`          
+`<tr ng-repeat="info in Infos">`        
+`<td>{{info.key}}</td>`     
+`</tr>`     
+`</table>`      
+
+### 解决办法，定义两个object (a, b) ，点击a.push(b)，然后按id排序。
+`<ul>`      
+`<li ng-repeat="info in Infos | orderBy: 'id'">`        
+`<span ng-click="check(info.key)">{{info.value}}</span>`        
+`</li>`     
+`</ul>`     
+
+`$scope.check = (key)->`        
+`  if key == '有嵌入表格的key'`       
+`    angular.forEach($scope.infoChild, (i)->`       
+`      $scope.info.push(i)`     
+`    )`     
+<!--2018-4-25-->
+
 <!--2018-4-24-->
 ## 遇到的坑
 #### Error: ngModel:nonassign Non-Assignable Expression
-#### 分析原因：是由ng-model=“xxx()” 书写错误导致的。 
+#### 分析原因：是由ng-model=“xxx()” 书写错误导致的。
 #### 正确的写法： ng-model="xxx" 或者 ng-click="xxx()"
 
 ## 学习内容
@@ -9,7 +67,7 @@
 #### ngModel命令用于绑定( input, select, textarea 或者 custom from control) 作为一个特性
 #### [参考资料] (https://code.angularjs.org/1.4.7/docs/api/ng/directive/ngModel)
 
-### 调试angular JS 
+### 调试angular JS
 #### 安装两个插件 angular JS batrang 和 angular JS spector，console中没有angularJS 需要重启浏览器。安装好后，可以在页面看到任意变量，如需要在console中调试，在页面右键点击想要调试的变量，然后输入$scope.xxx。
 #### [参考资料](https://blog.csdn.net/fangjuanyuyue/article/details/51201622)
 <!--2018-4-24-->
