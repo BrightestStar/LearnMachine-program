@@ -7,3 +7,6 @@
 #### 2018/4/24第3次上传，学习css如何将表格写成4列；如何调试angularJS；angularJS ngModel  
 #### 2018/4/25第4次上传，学习angularJS orderBy forEach isObject 方法
 #### 2018/4/26第5次编辑，学习iframe
+#### 2018/4/27第6次编辑，学习程序设计模式；学习ajax（松本行弘的程序世界）
+
+
